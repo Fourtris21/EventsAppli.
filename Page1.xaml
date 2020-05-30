@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:EventsApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="EventsApp.Pages.Page1">
+  
+    <StackLayout
+            Spacing=" 10"
+             Padding="20">
+
+        <Entry Placeholder="Event Name"
+                Text="{Binding EventName}"></Entry>
+        
+        
+        <Picker x:Name="EventsTypePicker"
+               SelectedIndex="{Binding EventType}"
+                Title="EventType"
+               >
+            <Picker.Items>
+                <x:String>art</x:String>
+                <x:String>music</x:String>
+                <x:String>gaming</x:String>
+            </Picker.Items>
+        </Picker>
+
+       
+        <Entry Placeholder="Description" 
+                Text="{Binding EventDescription}"></Entry>
+
+       
+        <Picker x:Name="CityPicker"
+                SelectedIndex="{Binding EventCity}"
+                Title="City">
+            <Picker.Items>
+                <x:String>Благоевград</x:String>
+                <x:String>Бургас</x:String>
+                <x:String>Варна</x:String>
+                <x:String>Велико Търново</x:String>
+                <x:String>Видин</x:String>
+                <x:String>Враца</x:String>
+                <x:String>Габрово</x:String>
+                <x:String>Добрич</x:String>
+                <x:String>Кърджали</x:String>
+                <x:String>Кюстендил</x:String>
+                <x:String>Ловеч</x:String>
+                <x:String>Монтана</x:String>
+                <x:String>Пазарджик</x:String>
+                <x:String>Перник</x:String>
+                <x:String>Плевен</x:String>
+                <x:String>Пловдив</x:String>
+                <x:String>Разград</x:String>
+                <x:String>Русе</x:String>
+                <x:String>Силистра</x:String>
+                <x:String>Сливен</x:String>
+                <x:String>Смолян</x:String>
+                <x:String>София</x:String>
+                <x:String>Стара Загора</x:String>
+                <x:String>Търговище</x:String>
+                <x:String>Хасково</x:String>
+                <x:String>Шумен</x:String>
+                <x:String>Ямбол</x:String>
+            </Picker.Items>
+            
+        </Picker>
+
+        <Entry Placeholder="Address"
+                Text=" {Binding EventAddress}"></Entry>
+        <DatePicker  x:Name="DatePi"  />
+        
+        <Label Text=" {Binding EventDateTime, Source = {x:Reference DatePi} }"> </Label>
+        
+
+        <Button Text=" Save Event"
+                    
+                    TextColor="Black"
+                    BackgroundColor="Gold"
+                    FontSize="11"
+                    Command="{Binding AddCommand}">
+            
+        </Button>
+
+
+    </StackLayout>
+   
+</ContentPage>

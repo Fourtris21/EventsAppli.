@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:local="clr-namespace:EventsApp.Pages"
+                  mc:Ignorable="d"
+             x:Class="EventsApp.MainPage">
+    <FlyoutItem Title="MyTabAps"
+                Shell.TabBarIsVisible="False"
+                FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Create event" Icon="newnew.png" IsTabStop="True"  ContentTemplate="{DataTemplate local:Page1}">
+
+        </ShellContent>
+
+        <ShellContent Title="Created events" Icon="newnew.png" IsTabStop="True"  ContentTemplate="{DataTemplate local:ListEventsPage2}">
+            
+        </ShellContent>
+        
+    </FlyoutItem>
+
+
+</Shell>

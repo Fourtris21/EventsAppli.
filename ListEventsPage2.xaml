@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:ViewModels="clr-namespace:EventsApp.ViewModels;assembly=EventsApp"
+             mc:Ignorable="d"
+             x:Class="EventsApp.Pages.ListEventsPage2">
+   <!-- <ContentPage.BindingContext>
+        <ViewModels:EventsViewModel/>
+    </ContentPage.BindingContext>-->
+   
+   <StackLayout>
+        <Button Text="Show created events"
+                 TextColor="Black"
+                    BackgroundColor="ForestGreen"
+                    FontSize="11"
+                Command="{Binding RefreshCommand}">
+            
+        </Button>
+    
+    <ListView ItemsSource="{Binding Events}"
+              HasUnevenRows="True"
+              Margin=" 40,80"
+              ItemTapped="ListView_OnItemTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding Name}"/>
+                        <Button Text=" Details"
+                                IsVisible="{Binding IsVisible}"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        
+    </ListView>
+   </StackLayout>
+</ContentPage>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EventsApp.Pages.RegisterPage">
+    <ContentPage.Content>
+        <StackLayout 
+            Spacing="10"
+            Padding="10">
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <Label Text="Register as an organisation"
+                           FontSize="18" TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1">
+                    <Entry Text="{Binding EntryOrganisationEmail}"
+                           Placeholder="Email"/>
+                </StackLayout>
+                <StackLayout Grid.Row="2">
+                    <Entry Text="{Binding EntryOrganisationPassword}"
+                           IsPassword="True"
+                           Placeholder="Password"/>
+                </StackLayout>
+                <StackLayout Grid.Row="3">
+                    <Entry Text="{Binding EntryOrganisationName}"
+                           Placeholder="Name"/>
+                </StackLayout>
+                <StackLayout Grid.Row="4">
+                    <Button Text="Register" 
+                            TextColor="Black"  
+                            BackgroundColor="Gold" 
+                            Command="{Binding RegisterProcedure}"/>
+                </StackLayout>
+                <StackLayout Grid.Row="5">
+                    <Label  Text="Already have an account?" 
+                            FontSize="18" TextColor="Black"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+                <StackLayout Grid.Row="6">
+                    <Button Text="Log in"
+                            TextColor="Black"  
+                            BackgroundColor="Gold"
+                            Clicked="NavigateToLogIn"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
